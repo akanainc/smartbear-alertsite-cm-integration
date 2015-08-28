@@ -1,0 +1,20 @@
+{
+	
+
+	"alertsiteFormContainer": {
+		"widgets": [
+			{
+				"position": "html",
+				"view": "DEMO/alertsite/alertsiteCan_container.ejs"
+			}
+		]
+	},
+	"alertsiteCustomForm" : {
+		"widgets": [
+			{
+				"position": "html",
+				"view": "DEMO/alertsite/alertsiteCan.ejs"
+			}
+		]
+	}
+}

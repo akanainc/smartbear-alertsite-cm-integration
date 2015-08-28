@@ -1,0 +1,161 @@
+<style>
+  .last-response-font {
+    font-size: xx-large;
+    color: #009900;
+
+  }
+  #single-monitor-details a {
+    color: #336699;
+  }
+
+  #alertsite-status-page {
+    width: 769px;
+    margin: auto;
+  }
+
+  #monitor-details table {
+    border: 0px;
+    background-color: #fff;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  #alertsite-status-page table {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  #alertsite-status-page table thead {
+    background-color: #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #alertsite-status-page table thead > tr > th {
+    text-align: left;
+    text-transform: uppercase;
+    padding: 9px 12px;
+  }
+
+  #alertsite-status-page table tbody > tr > td {
+    padding: 9px 12px;
+    min-height: 40px;
+  }
+
+
+  #alertsite-status-page div.columns-2 .column {
+    width: 50%;
+    float: left;
+  }
+
+  #alertsite-status-page div.columns-2 .graph {
+    width: 100%;
+    height: 300px;
+  }
+
+  #alertsite-status-page div.columns-1 .column {
+    width: 100%;
+    float: left;
+  }
+
+  #alertsite-status-page div.columns-1 .graph {
+    width: 100%;
+    height: 300px;
+  }
+
+  #alertsite-status-page .hidden {
+    display: none;
+  }
+</style>
+
+
+<br />
+<div id="alertsite-status-page">
+
+
+
+<div id="MyMonitors">
+ <h4>Select AlertSite Monitor From List To View</h4>
+  <form id="SelectMonitor">
+   <select id="myselect">
+  </select>
+  </form>
+</div>
+
+ <table id="alertsite-accounts" class="table">
+ <thead>
+   <tr>
+     <th>About this Monitor</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+
+   <td>
+   <div class="columns-2">
+   <div class="column column-left">
+    <table class="monitor_details">
+    <tbody>
+    <tr><td>Name:</td><td id="monitor_name"></td></tr>
+    <tr><td>Type: </td><td id="monitor_type"></td></tr>
+    <tr><td>Run Interval:</td><td id="run_interval"></td></tr>
+    </tbody>
+    </table>
+    </div>
+
+    <div class="column column-right">
+    <table class="last_response_time" >
+    <tbody>
+    <tr><td >Response Time</td></tr>
+    <tr><td id="last_response_time" class="last-response-font"></td></tr>
+    <tr><td >at last check</td></tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+
+    </td>
+    </tr>
+    <tr><td><div class="columns-1">
+    <div class="column column-right">
+      <h4>Weekly Performance</h4>
+      <div class="graph" id="performance-chart"></div>
+    </div></td></tr>
+  <br/>
+  <tr>
+  <td>
+ 
+  <h4 id="status_page_detail">Site Status Details</h4>
+   <table id="site_status_details" class="table">
+    <thead>
+      <tr>
+       <th>Monitor Location</th>
+         <th>Monitor Description</th>
+        <th>Last Response Time</th>
+        <th>Last Error</th>
+        <th>Last Status</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr class="copy">
+        <td class="monitor_location"></td>
+        <td class="monitor_description"></td>
+        <td class="last_response_time"></td>
+        <td class="last_error"></td>
+        <td class="last_status"></td>   
+      </tr>
+    </tbody>
+  </table>
+
+  <br />
+
+  
+   <hr />
+    </td>
+    </tr>
+  </tbody>
+ </table>
+</div>
+

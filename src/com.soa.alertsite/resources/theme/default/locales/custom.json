@@ -1,0 +1,17 @@
+{
+	"errors": {},
+	"labels": {
+		"customLoginPage": "/home/customdashboard",
+		"topnav_admin": "Admin",
+		"topnav_documents": "API Catalog",
+		"topnav_apps": "My Apps",
+		"topnav_support": "Resources",
+		"topnav_groups": "Groups",
+		"topnav_dashboard": "Dashboard",
+		"leftnav_alertsite": "AlertSite"
+	},
+	"messages": {},
+	"validator": {
+		"errors": {}
+	}
+}

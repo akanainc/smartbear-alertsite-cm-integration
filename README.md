@@ -33,10 +33,12 @@ This integration demonstrates basic integration with SmartBear AlertSite externa
   - click Okay to start the importation of the hook.
   - when prompted click Okay to deploy the virtual service to the container later.
 - this will create a AlertSite Organization with the requisite artefacts needed to run the API.
+- 
 ##### Activate Anonymous Contract
 - Expand the contracts folder in the AlertSite Organization
 - for each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
 - ensure that the status changes to "Workflow Is Completed"
+- 
 ##### Modify Process Orchestration
 - NOTE: This is only a prototype:  I hardcoded the basic auth token in the process script.  You should pull this out into a policy and encrypt this. 
 - For both the Alert_Site_API_vs0 and AlertSite_Detail_API_vs0 preform the following:

@@ -11,25 +11,9 @@ This integration demonstrates basic integration with SmartBear AlertSite externa
 
 
 ### Pre-Reqs
-- Download and import the AlertSite PostMan collection
-    + You must change the following in the requests defined
-        + GetSiteStatus - Used to verify your connection directly to the AlertSite APIs and to get monitor_ids
-            + Change the "C85702" to be your identifier (You can find this by logging into AlertSite, going to the Reports view, selecting Detail and one of your monitors,  hit run report, select Report API - generate report externally link, and finally you should see a URL in a popup window just above the words 'Try it'.  Your id will be be at teh end of the url before the ? https://www.alertsite.com/report-api/detail/C85702 )
-            + Enter the Basic Auth information on the Authorization tab of postman
-        +GetStatusProxyJSON - Used to verify your connection through your proxy to the AlertSite APIs
-            + Change the host to your proxied host
-            + Change the "C85702" to be your identifier
-        +PostMonitor - Used to link API versions to monitors in AlertSite
-            + Change the host to be your PM host
-            + Change the APIversionId in the URL to be the version Id of the API you want to link to a monitor.
-            + Click on the Body tag and enter the monitor id (obj_device) and enter a name for each monitor
-            + Enter the basic auth credentials and update the request
-        +GetAPIVersionMOnitor - Used to retrive and view which monitors are configured to an API version in CM
-            + Change API version in the URL
-            + Enter the basic auth credentials and update the request
+
 - You must have an account with SmartBear AlertSite
-    + You must define monitors for your API in SmartBear AlertSite
-    + You must be able to find the monitor ids by calling the above postman requests.
+    + You must define monitors for your APIs in SmartBear AlertSite by either using SoapUI or directly in the AlertSite website. 
 - You need Policy Manager v7.2.11 or later
 - You need Community Manager v7.2.4.1 or later
 - you must install the pso extensions custom polices:
@@ -49,20 +33,54 @@ This integration demonstrates basic integration with SmartBear AlertSite externa
   - click Okay to start the importation of the hook.
   - when prompted click Okay to deploy the virtual service to the container later.
 - this will create a AlertSite Organization with the requisite artefacts needed to run the API.
-
-#### Verify Import
-- Expand the services folder in the AlertSite you imported and find Alert_Site__API_VS0
-
-#### Host Virtual Services
-- bla bal
-
-#### Activate Anonymous Contract
+##### Activate Anonymous Contract
 - Expand the contracts folder in the AlertSite Organization
 - for each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
 - ensure that the status changes to "Workflow Is Completed"
+##### Modify Process Orchestration
+- NOTE: This is only a prototype:  I hardcoded the basic auth token in the process script.  You should pull this out into a policy and encrypt this. 
+- For both the Alert_Site_API_vs0 and AlertSite_Detail_API_vs0 preform the following:
+    + From the Details tab, click on Operations click on the GET in the list -> select the Process tab
+    + Open "script1" and replace the var auth = "Basic cOF1cmEuaGVyaXRhZ2VAYWthbmEuY29tOkFkZGkxNDAyIQ=="; with your basic auth token.  You can get this from PostMan.
+    + Click Finish and Save Process
 
+#### Install PostMan Collection, Configure Integration and Verify Import
+- Download and import the AlertSite PostMan collection
+    + You must change the following in the requests defined
+        + GetSiteStatus - Used to verify your connection directly to the AlertSite APIs and to get monitor_ids
+            + Change the "C85702" to be your identifier (You can find this by logging into AlertSite, going to the Reports view, selecting Detail and one of your monitors,  hit run report, select Report API - generate report externally link, and finally you should see a URL in a popup window just above the words 'Try it'.  Your id will be be at the end of the url before the ? https://www.alertsite.com/report-api/detail/C85702 )
+            + Enter the Basic Auth information on the Authorization tab of postman
+            + Hit send and you should see a result of XML
+        +GetStatusProxyJSON - Used to verify your connection through your proxy to the AlertSite APIs
+            + Change the host to your proxied host
+            + Change the "C85702" to be your identifier
+            + Hit Send and you should see a JSON result  
+                + NOTE: since we hardcoded the basic auth for AlertSite in the process anyone who has access to this URL can pull the report.  Again you will want to change this
+                + Note: You may need to change the CORS policy in Policy manager for you host configurations.  If you change it by creating a new version, remember to activate it. 
+        +PostMonitor - Used to link API versions to monitors in AlertSite
+            + Change the host to be your PM host
+            + Change the APIversionId in the URL to be the version Id of the API you want to link to a monitor.
+            + Click on the Body tag and enter the monitor id (obj_device) and enter a name for each monitor
+            + Enter your basic auth credentials for authenticating to Policy Manager and update the request
+        +GetAPIVersionMOnitor - Used to retrive and view which monitors are configured to an API version in CM
+            + Change API version in the URL
+            + Enter your basic auth credentials for authenticating to Policy Manager and update the request
 
 #### Import the theme into Community Manager
+#####There are two options for installation of the theme.
+1. From Community Manager's Config - Resources page, under Resource click on File Manager, and then click on Upload a Zip Archive.  Point to the dist/resource/theme.zip you download from github.
+2. Extract the dist/resource/theme.zip you download to a directory with a structure as such : alertsite/resources.  Change the configuration of you community manager to load the theme from a directory by:
+    + Logging into the admin console http://localhost:9900/admin
+    + Clicking on Configuration
+    + Select com.soa.atmosphere from the left nav.
+        ++ Change the atmosphere.config.loadResourcesFromWorkspace to true
+        ++ Change atmosphere atmosphere.config.resourcesPath :  {yourrootpath}/alertsite
+    + Restart CM
+Option #2 is good for if you are going to do further developement on the theme.
+
+##### What is in the theme
+- 
+ 
 
 ### License
 Copyright 2015 Akana, Inc.

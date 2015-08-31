@@ -31,34 +31,22 @@ Note: There are security considerations that need to be addressed by simply maki
 - Download AlertSite.zip
 - Login to PolicyManager  example: http://localhost:9900
 - Select the root "Registry" organisation and click on the "Import Package" from the Actions navigation window on the right side of the screen
-<<<<<<< HEAD
-  + click on button to browse for the AlertSite.zip archive file 
-  + click Okay to start the importation of the hook.
-  + when prompted click Okay to deploy the virtual service to the container later.
-  + this will create a AlertSite Organization with the requisite artefacts needed to run the API.
-
-##### Activate Anonymous Contract
-    + Expand the contracts folder in the AlertSite Organization
-    + for each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
-    + ensure that the status changes to "Workflow Is Completed"
-
-=======
   - click on button to browse for the AlertSite.zip archive file 
   - click Okay to start the importation of the hook.
   - when prompted click Okay to deploy the virtual service to the container later.
-- this will create a AlertSite Organization with the requisite artefacts needed to run the API.
-- 
+  - this will create a AlertSite Organization with the requisite artefacts needed to run the API.
+
 ##### Activate Anonymous Contract
 - Expand the contracts folder in the AlertSite Organization
 - for each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
 - ensure that the status changes to "Workflow Is Completed"
-- 
->>>>>>> origin/master
+
 ##### Modify Process Orchestration
 - NOTE: This is only a prototype:  I hardcoded the basic auth token in the process script.  You should pull this out into a policy and encrypt this. 
 - For both the Alert_Site_API_vs0 and AlertSite_Detail_API_vs0 preform the following:
     + From the Details tab, click on Operations click on the GET in the list -> select the Process tab
     + Open "script1" and replace the variable with your basic auth token.  You can get this from PostMan.
+    
     ```
     var auth = "Basic cOF1cmEuaGVyaXRhZ2VAYWthbmEuY29tOkFkZGkxNDAyIQ=="; 
 

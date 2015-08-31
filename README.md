@@ -6,6 +6,8 @@
 ## SmartBear AlertSite Community Manager Integration
 This integration demonstrates basic integration with SmartBear AlertSite external monitoring solution. Provided is a simple widget that retrieves monitor data for the given API version.  More complex interesting scenarios are possible by extending this widget.   It is indented to be a starting point for you. 
 
+Note: There are security considerations that need to be addressed by simply making Policy Manager policy.  
+
 ## SmartBear AlertSite
 ### About the SmartBear AlertSite
 
@@ -109,7 +111,7 @@ Option #2 is good for if you are going to do further developement on the theme.
 
     ```
 
- 
+  
 
 ### License
 Copyright 2015 Akana, Inc.

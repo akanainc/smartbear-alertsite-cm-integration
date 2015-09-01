@@ -42,6 +42,7 @@ Note: There are security considerations that need to be addressed by simply maki
     +for each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
     + ensure that the status changes to "Workflow Is Completed"
 
+
 ##### Modify Process Orchestration
 + NOTE: This is only a prototype:  I hardcoded the basic auth token in the process script.  You should pull this out into a policy and encrypt this. 
 + For both the Alert_Site_API_vs0 and AlertSite_Detail_API_vs0 preform the following:
@@ -102,7 +103,7 @@ Option #2 is good for if you are going to do further developement on the theme.
 + theme/default/DEMO/alertsite - Contains the files for the Community Manager AlertSite widget
 + SOA/CM/extensions - These files basically register the widget with the UI and create a the view
     + Left_nav.json - Overides the default left nav configuration and add the AlertSite link on the left navigation on the API view for the owner of the API.  You can configure this how you wish.
-    + widget_factor.json - Defines the new widgets references the ejs files from the /theme/default/DEMO/alertsite directory
+    + widget_factor.json - Defines the new widget. References the ejs files from the /theme/default/DEMO/alertsite directory
     + metadata.json - Defines the new alertsite view.  It references the widget key you defined in the widget_factory.json
 + locales and i18n - Are for Internationalization
 + less

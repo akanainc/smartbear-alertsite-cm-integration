@@ -95,8 +95,8 @@ You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.
     + Restart CM
 
 For both options:
-    + On the configuration view, go to  CONFIG -> CUSTOM SYTLES and click Rebuild Styles
-    + Clear your browser cache. 
++ On the configuration view, go to  CONFIG -> CUSTOM SYTLES and click Rebuild Styles
++ Clear your browser cache. 
 
 Option #2 is good for if you are going to do further developement on the theme.
 

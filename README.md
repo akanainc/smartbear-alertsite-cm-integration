@@ -12,6 +12,8 @@ Note: There are security considerations that need to be addressed by simply maki
 ### About the SmartBear AlertSite
 SmartBear AlertSite is an external monitor tool that allows you to monitor your customer's API experience from several locations around the world.  Leveraging AlertSite along with the API monitoring capabilities within in the Akana API Management platform gives you a complete view of what your API experience is for your API consumers.  It will help you troubleshoot and detect issues before they become a real problem.  
 
+![Image of Alertsite Integration](dist/images/AlertSite-CM.png)
+
 You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.com/product/alertsite/overview/)
 
 ### Pre-Reqs

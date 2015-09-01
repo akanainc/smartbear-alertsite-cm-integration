@@ -4,13 +4,15 @@
 [Akana.com](http://akana.com)
 
 ## SmartBear AlertSite Community Manager Integration
-This integration demonstrates basic integration with SmartBear AlertSite external monitoring solution. Provided is a simple widget that retrieves monitor data for the given API version.  More complex interesting scenarios are possible by extending this widget.   It is indented to be a starting point for you. 
+This integration demonstrates basic integration with SmartBear AlertSite, an external monitoring solution. Provided is a simple widget that retrieves monitor data for the given API version.  More complex interesting scenarios are possible by extending this widget.   It is indented to be a starting point for you. 
 
 Note: There are security considerations that need to be addressed by simply making Policy Manager policy.  
 
 ## SmartBear AlertSite
 ### About the SmartBear AlertSite
+SmartBear AlertSite is an external monitor tool that allows you to monitor your customer's API experience from several locations around the world.  Leveraging AlertSite along with the API monitoring capabilities within in the Akana API Management platform gives you a complete view of what your API experience is for your API consumers.  It will help you troubleshoot and detect issues before they become a real problem.  
 
+You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.com/product/alertsite/overview/)
 
 ### Pre-Reqs
 
@@ -19,27 +21,26 @@ Note: There are security considerations that need to be addressed by simply maki
 - You need Policy Manager v7.2.11 or later
 - You need Community Manager v7.2.4.1 or later
 - you must install the pso extensions custom polices:
-    + unzip the com.akana.pso.apihooks.extensions_7.2.3.zip (available in this repository) into the <Policy Manager Home>/sm70 directory. 
-   + Using the SOA Admin Console, install the following Plug-ins in each PM container:
-        * Akana PSO API Gateway Extensions for API Hooks
-        * Akana PSO Simple Things API
-    + Using the SOA Admin Console, install the following Plug-ins in each ND container:
-        * Akana PSO API Gateway Extension for API Hooks
-    + restart all PM and ND(s)
+    + Download the zip and follow the instructions [here](../akana-pso-tools/tree/master/akana-pso-apihooks-extensions)
 
 ### Getting Started Instructions
 #### Download and Import
 - Download dist/org_AlertSite_export.zip
 - Login to PolicyManager  example: http://localhost:9900
 - Select the root "Registry" organisation and click on the "Import Package" from the Actions navigation window on the right side of the screen
-  + click on button to browse for the AlertSite.zip archive file 
+  + click on button to browse for the org_AlertSite_export.zip archive file 
   + click Okay to start the importation of the hook.
   + when prompted click Okay to deploy the virtual service to the container later.
   + this will create a AlertSite Organization with the requisite artefacts needed to run the API.
+    + Note: You will get prompted that the orginal container doesn't exist.  Don't worry we can host the virtual services to your container.   Here is the location you need to define when hosting the virtual services
+        + Alert_Site_API_vs0
+            + location: alertsite/v2
+        + AlertSite_Detail_API_vso
+            + location: alertsitedetail/v2
 
 ##### Activate Anonymous Contract
     + Expand the contracts folder in the AlertSite Organization
-    +for each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
+    + for each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
     + ensure that the status changes to "Workflow Is Completed"
 
 
@@ -77,7 +78,7 @@ Note: There are security considerations that need to be addressed by simply maki
             + Click on the Body tag and enter the monitor id (obj_device) and enter a name for each monitor
             + Enter your basic auth credentials for authenticating to Policy Manager and update the request
         
-        + GetAPIVersionMOnitor - Used to retrive and view which monitors are configured to an API version in CM
+        + GetAPIVersionMonitor - Used to retrive and view which monitors are configured to an API version in CM
             + Change API version in the URL
             + Enter your basic auth credentials for authenticating to Policy Manager and update the request
 

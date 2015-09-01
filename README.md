@@ -21,7 +21,7 @@ You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.
 - You need Policy Manager v7.2.11 or later
 - You need Community Manager v7.2.4.1 or later
 - you must install the pso extensions custom polices:
-    + Download the zip and follow the instructions [here](../akana-pso-tools/tree/master/akana-pso-apihooks-extensions)
+    + Download the zip and follow the instructions [here](http://github.com/akanainc/akana-pso-tools/tree/master/akana-pso-apihooks-extensions)
 
 ### Getting Started Instructions
 #### Download and Import

@@ -90,8 +90,8 @@ You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.
     + Logging into the admin console http://localhost:9900/admin
     + Clicking on Configuration
     + Select com.soa.atmosphere from the left nav.
-        ++ Change the atmosphere.config.loadResourcesFromWorkspace to true
-        ++ Change atmosphere atmosphere.config.resourcesPath :  {yourrootpath}/AkanaInc/smartbear-alertsite-cm-integration/src/com.soa.alertsite
+        + Change the atmosphere.config.loadResourcesFromWorkspace to true
+        + Change atmosphere atmosphere.config.resourcesPath :  {yourrootpath}/AkanaInc/smartbear-alertsite-cm-integration/src/com.soa.alertsite
     + Restart CM
 
 For both options:

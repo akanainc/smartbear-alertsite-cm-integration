@@ -66,12 +66,12 @@ You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.
     
     + Click Finish and Save Process
 
-#### Install PostMan Collection, Configure Integration and Verify Import
-- Download and import the AlertSite PostMan collection
+#### Install SoapUI Project or the PostMan Collection, Configure Integration and Verify Import
+- Download and import the AlertSite SoupUI project (AlertSite.xml)  or AlertSite PostMan collection (AlertSite.json.postman_collection)
     + You must change the following in the requests defined
         + GetSiteStatus - Used to verify your connection directly to the AlertSite APIs and to get monitor_ids
             + Change the "C85702" to be your identifier (You can find this by logging into AlertSite, going to the Reports view, selecting Detail and one of your monitors,  hit run report, select Report API - generate report externally link, and finally you should see a URL in a popup window just above the words 'Try it'.  Your id will be be at the end of the url before the ? https://www.alertsite.com/report-api/detail/C85702 )
-            + Enter the Basic Auth information on the Authorization tab of postman
+            + Enter the Basic Auth information on the Authorization tab
             + Hit send and you should see a result of XML
         
         + GetStatusProxyJSON - Used to verify your connection through your proxy to the AlertSite APIs
@@ -87,7 +87,7 @@ You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.
             + Click on the Body tag and enter the monitor id (obj_device) and enter a name for each monitor
             + Enter your basic auth credentials for authenticating to Policy Manager and update the request
         
-        + GetAPIVersionMonitor - Used to retrive and view which monitors are configured to an API version in CM
+        + GetAPIVersionMonitor - Used to retrieve and view which monitors are configured to an API version in CM
             + Change API version in the URL
             + Enter your basic auth credentials for authenticating to Policy Manager and update the request
 

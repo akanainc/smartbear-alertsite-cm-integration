@@ -66,7 +66,7 @@ You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.
     
     + Click Finish and Save Process
 
-#### Install SoapUI Project or the PostMan Collection, Configure Integration and Verify Import
+#### Import SoapUI Project or the PostMan Collection, Configure Integration and Verify Import
 - Download and import the AlertSite SoupUI project (AlertSite.xml)  or AlertSite PostMan collection (AlertSite.json.postman_collection)
     + You must change the following in the requests defined
         + GetSiteStatus - Used to verify your connection directly to the AlertSite APIs and to get monitor_ids

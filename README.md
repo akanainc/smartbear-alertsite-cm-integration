@@ -40,13 +40,20 @@ You can find out more about AlertSite at [SmartBear AlertSite](http://smartbear.
         + AlertSite_Detail_API_vso
             + location: alertsitedetail/v2
 
-##### Activate Anonymous Contract
-    + Expand the contracts folder in the AlertSite Organization
-    + for each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
-    + ensure that the status changes to "Workflow Is Completed"
+#### Activate Anonymous Contract
+- Expand the contracts folder in the AlertSite Organization
+- For each contract click on the "Activate Contract" workflow activity in the right-hand Activities portlet
+- Ensure that the status changes to "Workflow Is Completed"
 
+#### Modify and Activate AlertSite CORS policy
+- Under the Aria Hooks organization you just imported
+    + Expand Policies -> Operational Policies and click on AlertSiteCors
+    + Click on Modify
+    + Under the Allow Header section, change the X-Csrf-Token_heritage and replace heritage with your Community Manager tenant name
+    + Click apply
+    + On the right hand side of the screen click on the Activate Policy link
 
-##### Modify Process Orchestration
+####  Modify Process Orchestration
 + NOTE: This is only a prototype:  I hardcoded the basic auth token in the process script.  You should pull this out into a policy and encrypt this. 
 + For both the Alert_Site_API_vs0 and AlertSite_Detail_API_vs0 preform the following:
     + From the Details tab, click on Operations click on the GET in the list -> select the Process tab
